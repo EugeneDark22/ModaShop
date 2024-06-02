@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% block title %}Зворотній звязок{% endblock %}
+{% load static %}
+
+{% block content %}
+    <main class="contact-page">
+        <h2>Зв'яжіться з нами</h2>
+        <div class="contact-form">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="submit-button">Відправити</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <p>Email: info@modashop.ua</p>
+            <p>Телефон: +380 99 123 4567</p>
+            <p>Адреса: 1234 Some Street, Kyiv, Ukraine</p>
+        </div>
+        <!-- Вставка Google Maps або іншої карти -->
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.71129860682!2d30.252511952676165!3d50.40169904877595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce56f9a4b381%3A0xc9b1bcd75cfdce3b!2sKyiv!5e0!3m2!1sen!2sua!4v1600000000000" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </main>
+{% endblock %}

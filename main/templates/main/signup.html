@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block title %}Реєстрація - SoulCraft{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="registration-container">
+    <h2 class="registration-title">Реєстрація</h2>
+    <form method="post" class="registration-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">Зареєструватися</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'main/base.html' %}
+{% block title %}Головна - SoulCraft{% endblock %}
+{% load static %}
+
+{% block content %}
+    <div class="main-banner">
+        <h2>Магазин модного одягу</h2>
+        <p>Незвичні колекції</p>
+    </div>
+    <div class="feature-section">
+        <h2>Ключові особливості нашого одягу</h2>
+        <p>Висока якість, унікальний дизайн, доступні ціни – ось що робить нас особливими.</p>
+    </div>
+    <div class="style-diversity-section">
+        <img src="{% static 'main/img/17.jpg' %}" alt="Різноманітність стилів">
+        <div class="content">
+            <h2>Різноманітність стилів</h2>
+            <p>Великий вибір стильного одягу для кожного.</p>
+            <ul>
+                <li>Сучасні фасони</li>
+                <li>Висока якість</li>
+                <li>Доступні ціни</li>
+            </ul>
+        </div>
+    </div>
+    <div class="unique-design-section">
+        <div class="content">
+            <h2>Унікальні дизайнерські рішення</h2>
+            <p>Одяг, який виділяється з натовпу завдяки ексклюзивним дизайнерським рішенням та яскравим деталям.</p>
+            <ul>
+                <li>Ексклюзивні принти</li>
+                <li>Яскраві деталі</li>
+                <li>Продуманий крій</li>
+            </ul>
+        </div>
+        <img src="{% static 'main/img/18.jpg' %}" alt="Унікальні дизайнерські рішення">
+    </div>
+    <div class="style-diversity-section">
+        <img src="{% static 'main/img/19.jpg' %}" alt="Різноманітність стилів">
+        <div class="content">
+            <h2>Будьте в тренді</h2>
+            <p>Одягайтесь у сучасних стилях з останніх коллекцій. </p>
+            <ul>
+                <li>Нові колекції</li>
+                <li>Актуальні кольори</li>
+                <li>Найновіші тренди</li>
+            </ul>
+        </div>
+    </div>
+    <div class="services-section">
+        <h2>Наші послуги для вас</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="icon"><img src="{% static 'main/img/5.png' %}" alt="Доставка"></div>
+                <h3>Доставка</h3>
+                <p>Швидка та надійна доставка прямо до ваших дверей, безкоштовно для замовлень від 1000 грн.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><img src="{% static 'main/img/6.png' %}" alt="Знижки"></div>
+                <h3>Знижки</h3>
+                <p>Скористайтеся ексклюзивними знижками та пропозиціями тільки для наших постійних клієнтів.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><img src="{% static 'main/img/7.png' %}" alt="Повернення"></div>
+                <h3>Повернення</h3>
+                <p>Зручне повернення товару, якщо він не підійшов або не задовольнив ваші очікування.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><img src="{% static 'main/img/8.png' %}" alt="Обмін"></div>
+                <h3>Обмін</h3>
+                <p>Легкий та швидкий обмін товару протягом 14 днів з моменту покупки.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><img src="{% static 'main/img/9.png' %}" alt="Подарунки"></div>
+                <h3>Подарунки</h3>
+                <p>Отримуйте стильні подарунки при покупці на суму від 2000 грн.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><img src="{% static 'main/img/10.png' %}" alt="Бонуси"></div>
+                <h3>Бонуси</h3>
+                <p>Збирайте бонусні бали за кожну покупку та витрачайте їх на нові товари.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

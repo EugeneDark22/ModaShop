@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ModaShop{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+    <style>
+        .main-banner {
+            background-image: url('{% static "main/img/1.jpg" %}');
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>ModaShop</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Головна</a></li>
+                    <li><a href="{% url 'shop' 'women' %}">Жінки</a></li>
+                    <li><a href="{% url 'shop' 'men' %}">Чоловіки</a></li>
+                    <li><a href="{% url 'about' %}">Про нас</a></li>
+                    <li><a href="{% url 'contact' %}">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="user-controls">
+                <ul>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'profile' %}">Профіль</a></li>
+                        <li><a href="{% url 'logout' %}">Вийти</a></li>
+                    {% else %}
+                        <li><a href="{% url 'signup' %}">Зареєструватися</a></li>
+                        <li><a href="{% url 'login' %}">Вхід</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'cart' %}">🛒</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+    <footer class="footer">
+        <div class="footer-section">
+            <h3>ModaShop</h3>
+            <p>ModaShop – ваше місце для модних покупок. Висока якість та стиль за доступними цінами!</p>
+        </div>
+        <div class="footer-section">
+            <h3>Компанія</h3>
+            <ul>
+                <li><a href="{% url 'index' %}">Головна</a></li>
+                <li><a href="{% url 'shop' 'women' %}">Жінки</a></li>
+                <li><a href="{% url 'shop' 'men' %}">Чоловіки</a></li>
+                <li><a href="{% url 'about' %}">Про нас</a></li>
+                <li><a href="{% url 'contact' %}">Контакти</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: info@modashop.ua</p>
+            <p>Phone: +380 99 123 4567</p>
+            <div class="social-icons">
+                <a href="#"><img src="{% static 'main/img/11.png' %}" alt="Instagram"></a>
+                <a href="#"><img src="{% static 'main/img/12.png' %}" alt="Facebook"></a>
+                <a href="#"><img src="{% static 'main/img/13.png' %}" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

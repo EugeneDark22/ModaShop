@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% block title %}Профіль{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="profile-container">
+    <h2>Профіль Користувача</h2>
+    <div class="user-details">
+        <p><strong>Ім'я користувача:</strong> {{ request.user.username }}</p>
+        <p><strong>Email:</strong> {{ request.user.email }}</p>
+        <!-- Додайте інші поля, які ви вважаєте необхідними -->
+    </div>
+    <div class="orders">
+        <h3>Історія замовлень</h3>
+        <ul>
+            {% for order in user_orders %}
+            <li>Замовлення №{{ order.id }} - Сума: {{ order.total_cost }} - Дата: {{ order.created_at|date:"d M Y" }}</li>
+            {% empty %}
+            <li>Замовлень немає.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="settings">
+        <h3>Налаштування</h3>
+        <p><a href="{% url 'edit_profile' %}">Редагувати профіль</a></p>
+        <p><a href="{% url 'change_password' %}">Змінити пароль</a></p>
+    </div>
+</div>
+{% endblock %}

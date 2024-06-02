@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block title %}Вхід - SoulCraft{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Вхід в систему</h2>
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">Увійти</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,854 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Змінено колір фону на білий */
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden; /* запобігаємо горизонтальному скролу */
+}
+
+.footer {
+    background-color: #774360;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    border-top: 1px solid #aaa;
+    width: 100%;
+    margin-top: auto;
+}
+
+.header {
+    background-color: #774360; /* Колір меню залишається незмінним */
+    color: white;
+    padding: 10px 20px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* Збільшено padding */
+    background-color: #774360; /* Забезпечуємо, що колір меню залишається незмінним */
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    color: white;
+    font-size: 32px;
+}
+
+.navbar nav ul, .user-controls ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar nav ul li, .user-controls ul li {
+    margin-left: 30px;
+}
+
+.navbar nav ul li a, .user-controls ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.user-controls ul li a {
+    margin-left: 10px; /* Зменшено відступ між кнопками управління користувачем */
+}
+
+.main-banner {
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.main-banner h2 {
+    font-size: 48px; /* Збільшено розмір шрифта для заголовка */
+    margin-bottom: 20px; /* Відступ між заголовком і параграфом */
+}
+
+.main-banner p {
+    font-size: 24px; /* Збільшено розмір шрифта для параграфу */
+}
+
+.main-banner h2, .main-banner p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Додає тінь для кращої читабельності на яскравому фоні */
+}
+
+
+.feature-section {
+    text-align: center;
+    padding: 50px 20px; /* Додаємо падінг для секції */
+    font-size: 20px; /* Збільшуємо шрифт для читабельності */
+}
+
+.feature-section h2 {
+    font-size: 32px; /* Великий шрифт для заголовка */
+    margin-bottom: 20px; /* Додаємо відступ під заголовком */
+}
+
+.feature-section p {
+    color: #333; /* Темно-сірий колір тексту для контрасту на білому фоні */
+}
+
+.style-diversity-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: white; /* Фон для контрасту, якщо потрібно */
+}
+
+.style-diversity-section img {
+    width: 30%; /* Зменшено ширину зображення */
+    height: auto;
+    border-radius: 10px; /* Додає рамки, як на картинці */
+    margin-right: 20px;
+}
+
+.style-diversity-section .content {
+    width: 40%; /* Зменшено ширину контенту */
+    padding: 20px;
+}
+
+.style-diversity-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.style-diversity-section p {
+    font-size: 18px;
+    color: #333;
+}
+
+.style-diversity-section ul {
+    list-style: none; /* Видаляє стандартні буллети */
+    padding: 0;
+}
+
+.style-diversity-section li {
+    padding-left: 20px; /* Додає індентацію для тексту */
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.style-diversity-section li::before {
+    content: '✔'; /* Додає знак галочки перед елементами списку */
+    color: green; /* Зелений колір для галочки */
+    position: absolute;
+    left: 0;
+}
+
+.unique-design-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.unique-design-section .content {
+    width: 50%;
+    padding: 20px;
+}
+
+.unique-design-section img {
+    width: 40%; /* Регулюйте за потребою */
+    height: auto;
+    border-radius: 10px;
+    margin-left: 20px; /* Додає відступ зліва від зображення */
+}
+
+.unique-design-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.unique-design-section p {
+    font-size: 18px;
+    color: #333;
+}
+
+.unique-design-section ul {
+    list-style: none; /* Видаляє стандартні буллети */
+    padding: 0;
+}
+
+.unique-design-section li {
+    padding-left: 20px; /* Додає індентацію для тексту */
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.unique-design-section li::before {
+    content: '✔'; /* Додає знак галочки перед елементами списку */
+    color: green; /* Зелений колір для галочки */
+    position: absolute;
+    left: 0;
+}
+
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8; /* Світлий фон для секції */
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon img {
+    width: 50px; /* Іконки з фіксованим розміром */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.footer-section p, .footer-section a {
+    color: white; /* Колір тексту */
+    text-decoration: none; /* Видалення підкреслення у посилань */
+}
+
+.footer-section ul {
+    list-style: none; /* Видалення маркерів списку */
+    padding: 0;
+}
+
+.footer-section li a:hover {
+    text-decoration: underline; /* Підкреслення посилань при наведенні */
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px; /* Розмір іконок соціальних мереж */
+    height: auto;
+}
+
+
+.products-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin: 10px;
+    width: calc(25% - 20px); /* Регулювання ширини для 4 карточок в ряд */
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Впорядкування вмісту карточки у вертикальному напрямку */
+}
+
+.product-card img {
+    width: 100%;
+    height: 500px; /* Фіксована висота для всіх зображень */
+    object-fit: cover; /* Забезпечує покриття всієї області зображення без спотворень */
+    border-bottom: 1px solid #ccc; /* Рамка на нижньому краю зображення */
+}
+
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Забезпечення заповнення вільного простору */
+    justify-content: space-between; /* Розподіл простору між елементами */
+}
+
+.product-info h4 {
+    color: #774360; /* Колір для категорії */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-info h3 {
+    color: #333;
+    font-size: 20px;
+}
+
+.product-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+.price {
+    font-weight: bold;
+    color: #774360;
+    margin: 10px 0;
+}
+
+.product-card button {
+    background-color: #774360;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%; /* Кнопка займає всю ширину карточки */
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-top: auto; /* Вирівнювання кнопки до низу */
+    margin-top: 10px; /* Додатковий відступ для естетичного розмежування кнопок */
+}
+
+.product-card button:hover {
+    background-color: #6a2c53; /* Зміна кольору кнопки при наведенні */
+}
+
+.product-card .buy-button {
+    background-color: #5cb85c; /* Зелений колір для кнопки купівлі */
+}
+
+.product-card .buy-button:hover {
+    background-color: #4cae4c; /* Темніший зелений колір при наведенні */
+}
+
+.product-card button:hover {
+    background-color: #6a2c53;
+}
+
+.search-section {
+    padding: 20px;
+    background-color: #f8f8f8; /* Світлий фон для контрасту */
+    text-align: center;
+}
+
+.search-section form {
+    display: inline-block; /* Центрування форми на сторінці */
+    margin-top: 10px;
+}
+
+.search-section label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.search-section input[type="number"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100px; /* Фіксована ширина для полів введення ціни */
+}
+
+.search-section select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-section button {
+    padding: 5px 15px;
+    background-color: #774360;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.search-section button:hover {
+    background-color: #6a2c53;
+}
+
+.product-detail-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8; /* Світлий фон для виділення продукту */
+}
+
+.product-image img {
+    width: 300px; /* Фіксована ширина для зображення */
+    height: auto;
+    border-radius: 10px; /* М'які краї для зображення */
+    margin-right: 50px; /* Відступ між зображенням і деталями */
+}
+
+.product-details {
+    max-width: 500px; /* Обмеження ширини текстової частини */
+}
+
+.product-details h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.product-details .category,
+.product-details .description,
+.product-details .price {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.product-details .category {
+    font-weight: bold;
+    color: #774360;
+}
+
+.product-details .price {
+    font-size: 20px;
+    color: #774360;
+    font-weight: bold;
+}
+
+.product-details .buy-button {
+    background-color: #774360;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.product-details .buy-button:hover {
+    background-color: #6a2c53;
+}
+
+.shopping-cart-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+    width: 80%;
+    margin: 20px auto; /* Центрування кошика на сторінці */
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #774360;
+    color: white;
+}
+
+.item-quantity {
+    width: 60px;
+}
+
+.btn-remove-item, .btn-checkout {
+    padding: 10px 20px;
+    background-color: #774360;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-remove-item:hover, .btn-checkout:hover {
+    background-color: #6a2c53;
+}
+
+.cart-checkout {
+    padding-top: 20px;
+    text-align: right;
+}
+
+.payment-delivery-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.payment-info, .delivery-info {
+    margin-bottom: 20px;
+}
+
+.payment-info form, .delivery-info form {
+    margin-top: 10px;
+}
+
+.payment-info label, .delivery-info label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.payment-info input, .delivery-info input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-submit-payment, .btn-submit-delivery {
+    background-color: #774360;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btn-submit-payment:hover, .btn-submit-delivery:hover {
+    background-color: #6a2c53;
+}
+
+.about-us {
+    width: 80%;
+    margin: 20px auto; /* Центрування блоку на сторінці */
+    padding: 20px;
+    background-color: #f9f9f9; /* Світлий фон для контрасту з текстом */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь для виразності */
+}
+
+.company-intro, .our-mission, .our-history {
+    margin-bottom: 20px;
+}
+
+.company-intro h2, .our-mission h3, .our-history h3 {
+    color: #774360; /* Корпоративний колір для заголовків */
+    margin-top: 0;
+}
+
+.company-intro p, .our-mission p, .our-history p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Темно-сірий колір тексту для кращої читабельності */
+}
+
+img {
+    width: 100%; /* Забезпечує, що зображення розтягується на всю доступну ширину */
+    height: auto; /* Зберігає пропорції зображення */
+    margin-top: 20px;
+}
+
+.contact-page {
+    width: 80%;
+    margin: 20px auto; /* Центрування сторінки */
+    padding: 20px;
+    background-color: #f9f9f9; /* Світлий фон */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Додає тінь для виділення */
+}
+
+.contact-form {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Заповнює доступний горизонтальний простір */
+}
+
+.contact-form button.submit-button {
+    padding: 10px 20px;
+    background-color: #774360;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button.submit-button:hover {
+    background-color: #6a2c53; /* Темніший відтінок при наведенні */
+}
+
+.contact-info {
+    padding: 20px;
+    background-color: #fff; /* Білий фон для контрасту з текстом */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #666;
+}
+
+.map iframe {
+    width: 100%; /* Повна ширина контейнера */
+    height: 450px; /* Фіксована висота карти */
+    border: none; /* Видалення стандартної рамки */
+    margin-bottom: 20px;
+}
+
+.registration-container {
+    width: 50%; /* Зменшено ширину для візуального скорочення форми */
+    margin: 20px auto; /* Центрування форми на сторінці */
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Додаємо стилі для приховування тексту помилок за замовчуванням */
+.help-text {
+    display: none; /* Приховуємо допоміжний текст за замовчуванням */
+}
+
+/* Опційно: показувати допоміжний текст при наведенні */
+input:hover + .help-text {
+    display: block; /* Показуємо допоміжний текст тільки при наведенні на поле вводу */
+}
+
+
+.registration-title {
+    text-align: center;
+    color: #774360; /* Корпоративний колір для заголовків */
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form p {
+    color: #666; /* Колір тексту у формі */
+    font-size: 16px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="password"],
+.registration-form input[type="email"] {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px; /* Додаємо більше місця між полями */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Вираховуємо ширину, враховуючи padding */
+}
+
+.registration-form label {
+    display: block; /* Забезпечуємо, що кожен лейбл займає свій рядок */
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #774360;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #6a2c53; /* Зміна кольору при наведенні */
+}
+
+
+.login-container {
+    width: 50%; /* Ідентично до реєстрації */
+    margin: 20px auto; /* Центрування форми на сторінці */
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form p {
+    color: #666; /* Стандартний колір тексту для форм */
+    font-size: 16px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="email"] {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px; /* Відступи між полями */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Враховуємо padding */
+}
+
+.login-form label {
+    display: block; /* Кожен лейбл у своєму рядку */
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #774360; /* Корпоративний колір */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #6a2c53; /* Темніший колір при наведенні */
+}
+
+.profile-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.user-details, .orders, .settings {
+    margin-top: 20px;
+}
+
+.user-details p, .orders li, .settings p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.orders ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.settings a {
+    color: #774360;
+    text-decoration: none;
+}
+
+.settings a:hover {
+    text-decoration: underline;
+}
+
+.profile-edit-container, .password-change-container {
+    width: 400px; /* Зменшуємо ширину форми */
+    margin: 30px auto; /* Центрування форми */
+    padding: 20px;
+    background-color: #f9f9f9; /* Світлий тон для контрасту */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Сильніша тінь для виділення */
+    border-radius: 8px; /* М'якіші краї */
+    font-size: 14px; /* Адаптація розміру шрифта */
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%; /* Повна ширина у межах контейнера */
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 16px; /* Більший проміжок між полями */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Менш радикальні краї */
+}
+
+button.btn-submit {
+    width: 100%; /* Кнопка на всю ширину форми */
+    padding: 10px;
+    background-color: #774360; /* Корпоративний колір */
+    color: white;
+    border: none;
+    border-radius: 4px; /* М'які краї кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.btn-submit:hover {
+    background-color: #6a2c53; /* Темніший тон при наведенні */
+}
+
+label {
+    font-weight: bold; /* Виділення назв полів */
+    color: #333; /* Темніший шрифт для кращого контрасту */
+}
+
+h2 {
+    color: #774360; /* Корпоративний колір для заголовків */
+    text-align: center;
+}
+

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block title %}Про нас{% endblock %}
+{% load static %}
+
+{% block content %}
+    <main class="about-us">
+        <section class="company-intro">
+            <h2>Про ModaShop</h2>
+            <p>ModaShop – це ведучий роздрібний продавець модного одягу в Україні. Ми пропонуємо широкий вибір продукції для чоловіків, жінок та дітей.</p>
+        </section>
+        <section class="our-mission">
+            <h3>Наша місія</h3>
+            <p>Наша місія полягає в тому, щоб забезпечити наших клієнтів якісним одягом за доступними цінами, забезпечуючи виняткове обслуговування.</p>
+        </section>
+        <section class="our-history">
+            <h3>Наша історія</h3>
+            <p>Заснована в 2000 році, ModaShop постійно розвивається та розширює свої горизонти. Ми горді бути лідерами на ринку моди в Україні.</p>
+        </section>
+        <img src="{% static 'main/img/16.jpg' %}" alt="ModaShop Store Front">
+    </main>
+{% endblock %}

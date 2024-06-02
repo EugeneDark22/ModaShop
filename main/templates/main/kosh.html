@@ -1,0 +1,58 @@
+{% extends 'main/base.html' %}
+{% block title %}Ваш кошик - SoulCraft{% endblock %}
+{% load static %}
+
+{% block content %}
+    <div class="shopping-cart-container">
+        <h2>Ваш кошик</h2>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Кількість</th>
+                    <th>Ціна за одиницю</th>
+                    <th>Загальна вартість</th>
+                    <th>Дії</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in products_info %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.product.price }} грн</td>
+                    <td>{{ item.subtotal }} грн</td>
+                    <td>
+                        <form action="{% url 'remove_from_cart' item.product.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-remove-item">Видалити</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p>Загальна вартість: {{ total_cost }} грн</p>
+    </div>
+    <!-- Інформація про оплату і доставку -->
+    <div class="payment-delivery-container">
+        <form action="{% url 'process_order' %}" method="post">
+            {% csrf_token %}
+            <div class="payment-info">
+                <h3>Інформація про оплату</h3>
+                <label for="card-number">Номер карти:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+                <label for="card-expiration">Термін дії:</label>
+                <input type="text" id="card-expiration" name="card-expiration" placeholder="MM/YY">
+                <label for="card-cvc">CVC:</label>
+                <input type="text" id="card-cvc" name="card-cvc" placeholder="CVC">
+            </div>
+            <div class="delivery-info">
+                <h3>Інформація про доставку</h3>
+                <label for="address">Адреса:</label>
+                <input type="text" id="address" name="address" placeholder="Введіть адресу доставки">
+            </div>
+            <button type="submit" class="btn-submit-delivery">Оформити замовлення</button>
+        </form>
+    </div>
+{% endblock %}

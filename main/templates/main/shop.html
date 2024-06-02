@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% block title %}Головна - SoulCraft{% endblock %}
+{% load static %}
+
+{% block content %}
+    <div class="search-section">
+        <form action="{% url 'search' %}" method="get">
+            <input type="hidden" name="gender" value="{{ category }}">
+
+            <label for="category-search">Виберіть категорію:</label>
+            <select id="category-search" name="category">
+                <option value="everyday">Повсякденне</option>
+                <option value="sports">Спортивне</option>
+                <option value="luxury">Люкс</option>
+                <option value="casual">Кежуал</option>
+                <option value="formal">Офіційне</option>
+            </select>
+
+            <label for="price-min">Мінімальна ціна:</label>
+            <input type="number" id="price-min" name="price_min" placeholder="від" min="0" step="100">
+
+            <label for="price-max">Максимальна ціна:</label>
+            <input type="number" id="price-max" name="price_max" placeholder="до" min="0" step="100">
+
+            <button type="submit">Шукати</button>
+        </form>
+    </div>
+    <div class="products-section">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <h4>Стать: {{ product.get_gender_display }}</h4> <!-- Виводимо стать товару -->
+                <h4>Категорія: {{ product.get_category_display }}</h4>
+                <p>{{ product.description }}</p>
+                <p class="price">Ціна: {{ product.price }} грн</p>
+                <button onclick="location.href='{% url 'product_detail' product.id %}'">Перейти</button>
+                <button class="buy-button" onclick="location.href='{% url 'add_to_cart' product.id %}'">Купити</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
